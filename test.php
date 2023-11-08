@@ -1,8 +1,8 @@
 <?php
 include 'libs/load.php';
 
-$user ='gopal';
-$pass ='12345678';
+$user ="dstamil";
+$pass ="12345678";
 $result= null;
 
 if(isset($_GET['logout'])){

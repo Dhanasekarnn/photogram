@@ -1,20 +1,29 @@
-
 <?php
-
 include 'libs/load.php';
 
-// if(signup("ds","76768","dsd@gh.com","768876786")){
-//     echo 'success';
+$user ='gopal';
+$pass ='12345678';
+$result= null;
 
-// }else {
-//     echo 'fail';
-// }
+if(isset($_GET['logout'])){
+    Session::destroy();
+    die('session destory, login aginn <a href="test.php">login</a>');
+}
 
-$mic1 = new Mic();
-$mic1->brand ="ds";
-printf($mic1->brand);
+if(Session::get('is_loggedin')){
+    $userdata -> Session::get('session_user');
+    print("welcome back,$userdata[username]");
+    $result= $userdata;
+}else{
+    printf('No session found');
+    $result=User::login($user, $pass);
+if($result){
+    print('login sucess');
 
-$mic1->color ='ooooo';
-$mic1->ds('ppppppp');
-
-?>
+}else{
+    print('login fail');
+}
+}
+echo <<<ds
+<a href="test.php?logout">Logout</a>
+ds;

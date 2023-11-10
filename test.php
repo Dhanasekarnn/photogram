@@ -1,8 +1,8 @@
 <?php
 include 'libs/load.php';
 
-$user ="dstamil";
-$pass ="12345678";
+$user ="suryra";
+$pass ="1234678";
 $result= null;
 
 if(isset($_GET['logout'])){
